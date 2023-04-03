@@ -75,7 +75,7 @@ app.get("/blogs", async (req, resp)=>{
 })
 
 app.get("/update/:id", async (req, resp) =>{
-    let blogData = await blog.findOne({_id: req.params.id });
+    let blogData = await blog.findOne({_id: req.params.id })
     let data = {
         title: blogData.title,
         disc: blogData.disc,
@@ -103,6 +103,8 @@ app.post('/update/:id', async (req, resp)=>{
     let update = await blog.findOneAndUpdate({_id: req.params.id}, {title:title, disc:disc,image:imgName})
     resp.redirect("/blogs")
 })
+
+
 
 let port = 7000;
 app.listen(port, () => {
