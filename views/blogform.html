@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog-form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: greenyellow;
+        }
+        .navbar {
+            background-color: royalblue;
+            width: auto;
+            height: 5rem;
+            border-bottom: 3px;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: disc;
+            margin-left: 40px;
+            padding-top: 20px;
+
+
+        }
+        .navbar ul li{
+            font-size: 1.5rem;
+            margin: auto;
+        }
+        .navbar ul a {
+            color: black;
+            padding: 5px;
+            text-decoration: none;
+        }
+        .navbar ul a:hover {
+            box-shadow: 0 0 2px red;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blogs">Blog</a></li>
+            <li><a href="/addblog">Add Blog</a></li>
+        </ul>
+
+    </section>
+    <h1>Add Blog Here</h1>
+
+    <form action="/addblog" method="POST" enctype="multipart/form-data">
+        <label for="file">Select Blog Image</label><br>
+        <input type="file" required name="image"><br>
+        <label for="title">Blog Title</label><br>
+        <input type="text" required name="title" class="title" placeholder="Blog Title"><br>
+        <label for="disc">Blog Discription</label><br>
+        <textarea name="disc" id="disc" cols="30" rows="10" required placeholder="Blog Discription"></textarea><br>
+        <button type="submit">Post Blog</button><br>
+
+    </form>
+</body>
+
+</html>
